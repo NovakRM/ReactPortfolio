@@ -1,0 +1,253 @@
+.about{
+    width: 100vw;
+    height: 100vh;
+    margin-top: 40px;
+    background-color: #fff7e1;
+    overflow: hidden;
+    height: 98vh;
+}
+
+.flex-grid {
+    display: flex;
+  }
+  .col {
+    flex: 1;
+  }
+
+  @media (max-width: 400px) {
+    .flex-grid {
+      display: block;
+    }
+}
+
+.col1{
+    border-bottom: solid 1px black;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.colWrapper{
+    display: flex;
+    padding: 2vw;
+    padding-left: 0;
+}
+
+.aboutHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color:#e43d19;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    color: #fff7e1;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow:
+    1.5px 1.5px 0 #000,
+  -1px -1px 0 #000,  
+   1px -1px 0 #000,
+   -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.aboutHeaderHori{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color:#e43d19;
+    color: #fff7e1;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow:
+    1.5px 1.5px 0 #000,
+  -1px -1px 0 #000,  
+   1px -1px 0 #000,
+   -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.skillBullets {
+    list-style: none;
+    padding: 0px;
+}
+
+.skillBullets li:before
+{
+    content: '\00BB';
+    color: #e43d19;
+    margin: 0 1em;
+}
+
+.skill{
+    padding: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.socMedia{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* flex-flow: row wrap; */
+    padding: 20px 15px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutImg{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container:hover .hoverOverlay{
+    opacity: .9;
+}
+
+.hoverOverlay:hover .un{
+    transform: translateX(10px) translateY(10px);
+}
+
+.hoverOverlay{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .7s ease;
+    background-color: #e43d19;
+    filter: blur(50%);
+}
+
+.un{
+    transition: transform 500ms ease-in-out 25ms;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    font-family: 'Fugaz One', cursive;
+}
+
+.un a{
+    text-decoration: none;
+    color: #fff7e1;
+    text-shadow:
+    3px 3px 0 #000,
+  -1px -1px 0 #000,  
+   1px -1px 0 #000,
+   -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.col2{
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    /* padding-left: 2vw;
+    padding-right: 2vw; */
+    padding: 2vh;
+    height: 100vh;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+ul.timeline-holder {
+    margin-left: 20px;
+    padding: 0 0 0 55px;
+    height: 85vh;
+    width: 55vw;
+    overflow-y: scroll;
+}
+
+li.timeline-event {
+    margin: 0 0 42px 60px;
+    position: relative;
+    padding-top: 5px;
+    list-style: none;
+    width: 45vw;
+}
+
+li.timeline-event:before {
+    content: "";
+    width: 3px;
+    height: calc(100% - 20px);
+    position: absolute;
+    background-color: #e43d19;
+    left: -30px;
+    top: 50px;
+}
+
+li.timeline-event:last-child:before {
+    display: none;
+}
+
+li.timeline-event:last-child {
+    margin-bottom: 0;
+}
+
+li.timeline-event span.timeline-circle:after {
+    content: "";    
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: -10px;
+    top: 10px;
+    border-radius: 90%;
+    background-color: #fca20d;    
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+li.timeline-event:hover span.timeline-circle:after { 
+    opacity: 1;
+}
+
+span.timeline-circle {
+    position: absolute;
+    top: 0;
+    left: -30px;
+}
+
+span.timeline-circle:before {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 35px;
+    border-radius: 90%;
+    border: 3px solid #e43d19;
+    position: absolute;
+    left: -16px;
+    top: 3px;
+    z-index: 1;
+    transition: .3s;
+}
+
+.timeline-event-date {
+    position: absolute;
+    left: -100px;
+    top: 10px;
+    transition: .3s;
+    color: #e43d19;
+    font-weight: 700;
+}
+
+li.timeline-event:hover .timeline-event-date {
+    transform: translateX(-5px);
+}
+
+.timeline-event-content {
+    line-height: 160%;
+    text-align: left;
+    margin-left: 50px;
+}

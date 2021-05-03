@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import sanityClient from "../client.js"
+import sanityClient from "../../client.js"
+import Nav from "../Nav/Nav"
 //state-> usestate-> setstate
 
 export default function Posts(){
@@ -25,6 +26,7 @@ export default function Posts(){
     }, []) // no params, run once on mount
     return(
         <main>
+            <Nav />
             <div>
                 <h1>Posts</h1>
                 <h2>Shitposting? Blogging?</h2>
@@ -32,7 +34,7 @@ export default function Posts(){
                     {postData && postData.map((post, index)=>(
                     // map over postData object & display
                     <article>
-                        <Link to={"post/" + post.slug.current} key={post.slug.current}>
+                        <Link to={"/post/" + post.slug.current} key={post.slug.current}>
                             <span key={index}>
                                 <img 
                                     src={post.mainImage.asset.url}

@@ -6,7 +6,7 @@ export default {
     {
       name: 'name',
       title: 'Name',
-      type: 'string',
+      type: 'string'
     },
     {
       name: 'slug',
@@ -14,16 +14,16 @@ export default {
       type: 'slug',
       options: {
         source: 'name',
-        maxLength: 96,
-      },
+        maxLength: 96
+      }
     },
     {
       name: 'image',
       title: 'Image',
       type: 'image',
       options: {
-        hotspot: true,
-      },
+        hotspot: true
+      }
     },
     {
       name: 'bio',
@@ -34,15 +34,34 @@ export default {
           title: 'Block',
           type: 'block',
           styles: [{title: 'Normal', value: 'normal'}],
-          lists: [],
-        },
-      ],
+          lists: []
+        }
+      ]
+    },
+    {
+      name: 'skills',
+      title: 'Skills',
+      type: 'array',
+      of: [{type: 'string'}
+      ]
+    },
+    {
+      name: 'authorSkills',
+      title: 'Author Skills',
+      type: 'array',
+      of: [
+        {
+          title: 'Block',
+          type: 'block',
+          lists: [{title: 'Bullet', value: 'bullet'}]
+        }
+      ]
     },
   ],
   preview: {
     select: {
       title: 'name',
-      media: 'image',
-    },
-  },
+      media: 'image'
+    }
+  }
 }

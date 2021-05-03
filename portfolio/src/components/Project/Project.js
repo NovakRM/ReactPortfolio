@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react'
 // import project from '../../studio/schemas/project.js'
-import sanityClient from "../client.js"
+import sanityClient from "../../client"
+import Nav from "../Nav/Nav"
+import style from "./style.css"
 
 export default function Project(){
     const [projectData, setProjectData] = useState(null)
@@ -23,43 +25,55 @@ export default function Project(){
             <section>
                 <h1>Portfolio</h1>
                 <h2>Repository of computer-talk!</h2>
-                <section>
+                <section className="projectContainer">
                 {projectData && projectData.map((project, index)=>(
-                   <article>
-                    <h3>
+                   <article className="project">
+                   <div className="overlay">
+                            <p className="text">  
+                                <a 
+                                    href={project.link}
+                                    target="_blank">
+                                    View Project {" "}
+                                    <span role="img" aria-label="eyes emoji">👀</span>
+                                </a>
+                            </p>
+                    </div>
+
+                    <h3 className="projectHeading">
                         <a 
                         href={project.link}
                         target="_blank">
                         {project.title}</a>
                     </h3>
-                    <div>
+
+                    <div className="projectDeets">
                         <span>
                             <b>
-                                Finished on:{" "}
-                                {new Date(project.date).toLocaleDateString()}
+                                Finished on:{" "}                           
                             </b>
+                                {new Date(project.date).toLocaleDateString()}
+ 
                         </span>
+                        <br />
                         <span>
                             <b>
                                 Frameworks:{" "}
-                                {project.frameworks}
                             </b>
+                                {project.frameworks}
+
                         </span>
+                        <br />
                         <span>
                             <b>
                                 Type:{" "}
-                                {project.projectType}
                             </b>
+                                {project.projectType}
                         </span>
+                        <hr />
                         <p>
                             {project.description}
                         </p>
-                        <a 
-                            href={project.link}
-                            target="_blank">
-                            View Project {" "}
-                        <span role="img" aria-label="eyes emoji">👀</span>
-                        </a>
+
                     </div>
                    </article>
                    ))}
