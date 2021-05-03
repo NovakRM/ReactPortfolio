@@ -75,7 +75,7 @@ export default function Project(){
                     </div>
 
                     <div className="col2">
-                        <img src={project.projectImage.asset.url}/>
+                        <a href={project.link}><img src={project.projectImage.asset.url}/></a>
                     </div>
 
                    </article>
