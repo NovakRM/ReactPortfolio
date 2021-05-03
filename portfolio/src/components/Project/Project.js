@@ -15,38 +15,36 @@ export default function Project(){
             description,
             projectType,
             link,
-            tags
+            tags,
+            projectImage{
+                asset->{
+                    _id,
+                    url
+                },
+                alt
+            }
         }`)
         .then((data)=> setProjectData(data))
         .catch(console.error)
     }, []) //query once
     return(
         <main>
+            <div id="noise"></div>
+            <Nav />
             <section>
-                <h1>Portfolio</h1>
-                <h2>Repository of computer-talk!</h2>
+
                 <section className="projectContainer">
                 {projectData && projectData.map((project, index)=>(
-                   <article className="project">
-                   <div className="overlay">
-                            <p className="text">  
-                                <a 
-                                    href={project.link}
-                                    target="_blank">
-                                    View Project {" "}
-                                    <span role="img" aria-label="eyes emoji">👀</span>
-                                </a>
-                            </p>
-                    </div>
+                   <article className="flex-grid">
 
-                    <h3 className="projectHeading">
-                        <a 
-                        href={project.link}
-                        target="_blank">
-                        {project.title}</a>
-                    </h3>
-
-                    <div className="projectDeets">
+                    <div className="one">
+                        
+                        <h3 className="aboutHeaderHori">
+                            <a 
+                            href={project.link}
+                            target="_blank">
+                            {project.title}</a>
+                        </h3>
                         <span>
                             <b>
                                 Finished on:{" "}                           
@@ -69,12 +67,17 @@ export default function Project(){
                             </b>
                                 {project.projectType}
                         </span>
-                        <hr />
+                        {/* <hr /> */}
                         <p>
                             {project.description}
                         </p>
 
                     </div>
+
+                    <div className="col2">
+                        <img src={project.projectImage.asset.url}/>
+                    </div>
+
                    </article>
                    ))}
                 </section>

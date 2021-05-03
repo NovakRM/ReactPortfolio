@@ -3,88 +3,84 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    margin-top: 40px;
+    background-color: #fff7e1;
     height: 100vh;
     width: 100vw;
 }
 
 .projectContainer{
+  overflow-y: scroll;
+}
+
+.flex-grid {
     display: flex;
-    flex-wrap: wrap;
+  }
+  .col {
+    flex: 1;
+  }
+
+  @media (max-width: 400px) {
+    .flex-grid {
+      display: block;
+    }
 }
 
-.projectHeading{
-    background-color: #5175b0;
+.one{
+    border-bottom: solid 1px black;
+    border-left: solid 1px black;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.col2{
+    border-left: solid 1px black;
+    border-bottom: solid 1px black;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* .col2:last-of-type{
+
+} */
+
+.col2 img{
+    width: 330px;
+    height: auto
+}
+
+.aboutHeaderHori{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 15px;
-    width: 100%;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 10px;
+    background-color:#e43d19;
+    color: #fff7e1;
+    text-transform: uppercase;
 }
 
-.projectHeading a{
+.aboutHeaderHori a{
+    font-weight: bold;
+    letter-spacing: 2px;
     text-decoration: none;
     color: #fff7e1;
+    text-shadow:
+    3px 3px 0 #000,
+  -1px -1px 0 #000,  
+   1px -1px 0 #000,
+   -1px 1px 0 #000,
+    1px 1px 0 #000; 
 }
 
-.project{
-    background-color: #fffcf2;
-    width: 350px;
-    height: 350px;
-    padding-left: 20px;
-    padding-right: 20px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hide;
-    margin: 10px;
-}
-
-.projectDeets{
-    
-}
-
-.overlay {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    width: 350px;
-    height: 350px;
-    padding-left: 20px;
-    padding-right: 20px;
-    opacity: 0;
-    transform: translateX(20%);
-    transition: .5s ease;
-    background-color: #5175b0;
-}
-
-.project:hover .overlay {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.text {
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    text-align: center;
-}
-
-.text a{
-    text-decoration: none;
-    color: white;
-}
-
-.text a:hover{
-    font-weight: bold;
-}
-
-hr{
-    height:2px;
-    border-width:0;
-    color: #5175b0;
-    background-color:#5175b0;
-    margin-top: 15px;
+.aboutHeaderHori a:hover{
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: #fff7e1;
+  text-shadow:
+  1px 4px 0 #000,
+  2px 1px 0 #000,  
+  1px -1px 0 #000,
+ -1px 1px 0 #000,
+  1px 1px 0 #000; 
 }

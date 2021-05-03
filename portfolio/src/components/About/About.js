@@ -58,6 +58,7 @@ export default function About() {
             <div className="container">
               <div className="hoverOverlay">
                 <h1 className="un"><a href="/">Osteophagy</a></h1>
+                <h5 className="subheading">( Noun. ) The practice in which animals, usually herbivores, consume bones. </h5>
               </div>
               <img className="aboutImg" src="https://i.imgur.com/6ePZ1Q8.png" />
             </div>
