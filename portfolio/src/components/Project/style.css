@@ -46,7 +46,14 @@ main{
 
 .col2 img{
     width: 330px;
-    height: auto
+    height: auto;
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(1);
+    transition: filter .5s ease-in-out;
+}
+
+img:hover{
+  filter: none;
 }
 
 .aboutHeaderHori{
